@@ -1,4 +1,4 @@
-# custom_bot_ros
+# Turtoise Bot
 
 This is a gazebo repository containing a custom mobile robot called <i>Turtoise bot</i> including camera and lidar plugins
 
@@ -17,5 +17,14 @@ catkin_make
 2. Clone the repository to the src folder
 
 ```
+cd src
+git clone https://github.com/Rajpal9/turtoise_bot.git
+cd ..
+catkin_make
+```
 
+3. source the setup.bash file and launch the simulation
+```
+source ./devel/setup.bash
+roslaunch turtoise_bot turtoise_bot.launch
 ```
