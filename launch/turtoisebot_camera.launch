@@ -1,0 +1,18 @@
+<launch>
+<!--load the Tutroise URDF model into parameter server-->
+<param name="robot_description" textfile="$(find turtoise_bot)/URDF/turtoisebot_camera.urdf" />
+<!--Start and empty gazebo world-->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find turtoise_bot)/worlds/turtlebot3_stage_2.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include> 
+<!--Spawn turtoisebot in gazebo with description form parameter server-->
+<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
+      args="-param robot_description -urdf -model turtoisebot" />
+<node name="robot_state_publisher" pkg="robot_state_publisher" 
+	  type="robot_state_publisher" />
+</launch>
