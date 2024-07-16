@@ -28,3 +28,9 @@ catkin_make
 source ./devel/setup.bash
 roslaunch turtoise_bot turtoisebot.launch
 ```
+
+4. Launching turtoise bot with camera simulation and viewing the images. For this step, close any gazebo simulation, if running.
+```
+roslaunch turtoise_bot turtoisebot_camera.launch
+rosrun image_view image_view image:=/camera1/image_raw
+```
