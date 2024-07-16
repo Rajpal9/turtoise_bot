@@ -26,5 +26,5 @@ catkin_make
 3. source the setup.bash file and launch the simulation
 ```
 source ./devel/setup.bash
-roslaunch turtoise_bot turtoise_bot.launch
+roslaunch turtoise_bot turtoisebot.launch
 ```
